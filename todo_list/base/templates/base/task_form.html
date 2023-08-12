@@ -1,0 +1,29 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3 class="card-title">Форма задачи</h3>
+                </div>
+                <div class="card-body">
+                    <a href="{% url 'tasks' %}" class="btn btn-secondary">Вернуться назад</a>
+
+                    <form method="POST" action="" class="mt-4">
+                        {% csrf_token %}
+                        {{form.as_p}}
+
+                        <div class="text-center">
+                            <input type="submit" value="Отправить" class="btn btn-primary">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
